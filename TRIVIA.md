@@ -16,3 +16,4 @@ PS: The commit messages and documents may have chaotic language, I'm not doing p
 - Am I doing this right?
 - And there's developing the lore, composing the soundtrack, designing the *world* inside game, and somehow manage to do some digital art (aka *procedurally generate a metric ton of equations and vertices my way out*). Plotting the *art* like a *mathematical expression*. One of the core tenets of this game is procedural generation by the way, cause I suck at digital art. It looks like I'll complete my lifetime before this game :'D
 - "Do everything by oneself, trying to prove oneself worthy... Say hello to your comrades in the moratorium..." Looks like a nice passage to add to the game.
+- Prepare the channels for downloading the game easily when finished. The game's code and everything will always be open source, give people means to support the game at the final stages of development. Let this be a fully open source indie game from the start.
