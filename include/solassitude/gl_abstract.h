@@ -1,6 +1,7 @@
 #pragma once
 
 #include "library_error.h"
+#include <vector>
 
 namespace solassitude {
     namespace gl {
@@ -10,6 +11,22 @@ namespace solassitude {
             explicit error(error_code_t error_code) : library_error{ error_code } { }
             explicit error();
             ~error() { }
+        };
+        
+        class object {
+        public:
+            explicit object(unsigned int i) : m_id{ i } { }
+            ~object() { }
+            
+            constexpr unsigned int id() const noexcept {
+                return m_id;
+            }
+            
+            constexpr void id(unsigned int i) noexcept {
+                m_id = i;
+            }
+        private:
+            unsigned int m_id;
         };
         
         enum class buffer_bits {

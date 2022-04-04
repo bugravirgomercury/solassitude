@@ -6,7 +6,8 @@
 namespace solassitude {
 	namespace gl {
 		class vertex_arrays;
-		
+		class vertex_array;
+		/*
 		class vertex_array {
 		private:
 			friend class vertex_arrays;
@@ -17,6 +18,15 @@ namespace solassitude {
 			
 		private:
 			unsigned int m_vao;	
+		};*/
+		
+		class vertex_array : public object {
+		private:
+			friend class vertex_arrays;
+			explicit vertex_array(unsigned int vao) : object{ vao } { }
+		public:
+			vertex_array &bind(void);
+			~vertex_array() { }
 		};
 		
 		class vertex_arrays {

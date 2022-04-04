@@ -26,34 +26,22 @@ namespace solassitude {
 			none
 		};
 		
-		class buffer {
-		private:
-			friend class buffers;
-			explicit buffer(unsigned int id) : m_id{ id }, m_target{ buffer_target::none } { }
-			
+		class buffer_impl : public object {
 		public:
-			buffer &bind(buffer_target target = buffer_target::array);
+			explicit buffer_impl(buffer_target target, unsigned int id) : object{ id }, m_target{ target } { }
+			~buffer_impl() { }
 			
+			buffer_impl &bind(void);
+			
+			constexpr buffer_target target(void) const noexcept {
+				return m_target;
+			}
+			
+			void target(buffer_target new_target) noexcept {
+				m_target = new_target;
+			}
 		private:
-			unsigned int m_id;
 			buffer_target m_target;
-		};
-		
-		class buffers {
-		public:
-			explicit buffers(int n = 1);
-			~buffers();
-			
-			buffer operator[](int i) noexcept {
-				return buffer{ m_ids.at(i) };
-			}
-			
-			unsigned int size(void) const noexcept {
-				return m_ids.size();
-			}
-			
-		private:
-			std::vector<unsigned int> m_ids;
 		};
 	}
 }

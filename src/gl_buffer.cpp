@@ -30,9 +30,17 @@ static constexpr GLenum _solassitude_to_gl(solassitude::gl::buffer_target target
 	}
 }
 
+/*
 solassitude::gl::buffer &solassitude::gl::buffer::bind(solassitude::gl::buffer_target target) {
 	m_target = target;
 	::glBindBuffer(_solassitude_to_gl(m_target), m_id);
+	__GL_CHECK_ERROR
+	return *this;
+}
+*/
+
+solassitude::gl::buffer_impl &solassitude::gl::buffer_impl::bind(void) {
+	::glBindBuffer(_solassitude_to_gl(target()), id());
 	__GL_CHECK_ERROR
 	return *this;
 }
