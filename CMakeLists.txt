@@ -17,6 +17,7 @@ set_target_properties(
 	CXX_EXTENSIONS OFF
 )
 
+
 target_include_directories(solassitude PUBLIC include)
 
 target_link_libraries(solassitude GLEW glfw3 dl pthread GL)

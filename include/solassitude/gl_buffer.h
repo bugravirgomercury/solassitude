@@ -26,6 +26,44 @@ namespace solassitude {
 			none
 		};
 		
+		class buffer_impl : public object {
+		public:
+			explicit buffer_impl(buffer_target target, unsigned int id) : object{ id }, m_target{ target } { }
+			~buffer_impl() { }
+			
+			buffer_impl &bind(void);
+			
+			constexpr buffer_target target(void) const noexcept {
+				return m_target;
+			}
+			
+			void target(buffer_target new_target) noexcept {
+				m_target = new_target;
+			}
+		private:
+			buffer_target m_target;
+		};
+		
+		/*
+		
+		template <buffer_target target_p = buffer_target::array> 
+		class buffer : public object {
+		private:
+			friend class buffers;
+			explicit buffer(unsigned int i) : object{ i } { }
+			
+			static void bind_nontemplated(buffer_target, unsigned int);
+		public:
+			buffer<target_p> &bind(void) {
+				bind_nontemplated(target_p, id());
+				return *this;
+			}
+			
+			constexpr buffer_target target(void) const noexcept {
+				return target_p;
+			}
+		};
+		
 		class buffer {
 		private:
 			friend class buffers;
@@ -55,5 +93,7 @@ namespace solassitude {
 		private:
 			std::vector<unsigned int> m_ids;
 		};
+		
+		*/
 	}
 }
