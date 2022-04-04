@@ -1,39 +1,13 @@
-// Include GLEW. Include it before GL headers, due to their
-// stateful nature.
-#include <GL/glew.h>
-
 // Include GLFW.
 #define GLFW_INCLUDE_NONE
 #include <GLFW/glfw3.h>
 
-// Include GLM
-#include <glm/glm.hpp>
+#include <solassitude/glfw_abstract.h>
 
-// Include GLAbstract
-#include <solassitude/solassitude.h>
-
-#include <string>
+#include <string> // std::string
+#include <cassert> // assert
 
 solassitude::glfw::error::error() : solassitude::glfw::error{ ::glfwGetError(NULL) } { }
-
-void solassitude::glew::experimental(bool bExperimental) noexcept {
-    glewExperimental = bExperimental ? GL_TRUE : GL_FALSE;
-}
-
-bool solassitude::glew::experimental(void) noexcept {
-    return glewExperimental == GL_TRUE ? true : false;
-}
-
-void solassitude::glew::initialize(void) {
-    auto err = glewInit();
-    if (GLEW_OK != err) {
-        throw solassitude::glew_error{ err };
-    }
-}
-
-void solassitude::glew::terminate(void) {
-    // TODO: Unload GLEW library here.
-}
 
 void solassitude::glfw::glfw::initialize(void) {
     if (!glfwInit()) {
@@ -43,10 +17,6 @@ void solassitude::glfw::glfw::initialize(void) {
 
 void solassitude::glfw::glfw::terminate(void) {
     glfwTerminate();
-}
-
-std::string solassitude::glew_error::what_for_error_code(solassitude::glew_error::error_code_t error_code) const noexcept {
-    return std::string{ reinterpret_cast<const char *>(glewGetErrorString(static_cast<GLenum>(error_code))) };
 }
 
 std::string solassitude::glfw::error::what_for_error_code(solassitude::glfw::error::error_code_t error_code) const noexcept {
@@ -65,7 +35,7 @@ void solassitude::glfw::glfw::context_version(unsigned int major, unsigned int m
 }
 
 void solassitude::glfw::glfw::gl_forward_compatible(bool compatible) {
-    glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, compatible ? GL_TRUE : GL_FALSE);
+    glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, compatible ? GLFW_TRUE : GLFW_FALSE);
 }
 
 void solassitude::glfw::glfw::gl_profile(solassitude::glfw::opengl_profile profile) {
