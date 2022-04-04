@@ -18,3 +18,7 @@ PS: The commit messages and documents may have chaotic language, I'm not doing p
 - "Do everything by oneself, trying to prove oneself worthy... Say hello to your comrades in the moratorium..." Looks like a nice passage to add to the game.
 - Prepare the channels for downloading the game easily when finished. The game's code and everything will always be open source, give people means to support the game at the final stages of development. Let this be a fully open source indie game from the start.
 - Choose a license for the project.
+- http://www.opengl-tutorial.org/beginners-tutorials/tutorial-2-the-first-triangle/
+- Have enough API abstracted to be able to apply OpenGL tutorials with it.
+- https://store.steampowered.com/app/774811/YUMENIKKI_DREAM_DIARY/
+- *rafael anton irisarri midnight colours*
