@@ -48,6 +48,12 @@ namespace solassitude {
             return static_cast<int>(a & b) != 0;
         }
         
+        
+        
+        
+        
+        
         void clear(buffer_bits bitmask);
+        
     }
 }
