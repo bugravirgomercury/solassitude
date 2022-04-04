@@ -6,6 +6,7 @@
 #include <solassitude/glfw_abstract.h>
 #include <solassitude/glfw_window.h>
 #include <solassitude/gl_abstract.h>
+#include <solassitude/gl_vertex_array.h>
 
 void log(const std::string_view& message,
          const std::experimental::source_location &location = 
@@ -37,9 +38,11 @@ int main(int argc, char const *argv[])
     
     window.input_mode(solassitude::glfw::input_modes::sticky_keys, true);
     
+    solassitude::gl::vertex_arrays vaos{ 1 };
+    
     do {
         // clear screen
-        solassitude::gl::clear(solassitude::gl::buffers::color);
+        solassitude::gl::clear(solassitude::gl::buffer_bits::color);
         
         // swap buffers
         window.swap_buffers();
