@@ -24,7 +24,7 @@ solassitude::gl::vertex_arrays::~vertex_arrays() {
 }
 
 solassitude::gl::vertex_array &solassitude::gl::vertex_array::bind(void) {
-	glBindVertexArray(m_vao);
+	glBindVertexArray(id());
 	
 	__GL_CHECK_ERROR
 	
