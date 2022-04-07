@@ -25,7 +25,7 @@ The *italic* entries are sources of inspiration for the game's ambience/mechanic
 - https://store.steampowered.com/app/774811/YUMENIKKI_DREAM_DIARY/
 - [*rafael anton irisarri - midnight colours*](https://www.youtube.com/playlist?list=OLAK5uy_lY2grlc2ULuazvTITlDqotZUszTSeC2Fg)
 
-# Apr 6 2022
+# Apr 7 2022
 - Found out it's better to abstract OpenGL in a more procedural style, as the library is a mere state machine. Not very conducive to object oriented design.
 - Look up [Fahrenheit](https://en.wikipedia.org/wiki/Fahrenheit_(graphics_API)), [OpenGL++](https://en.wikipedia.org/wiki/OpenGL%2B%2B) for an idea how to structure the OpenGL abstraction. (They both failed to finish, though.)
 - [*youryoungbody - january*](https://www.youtube.com/watch?v=Sc2D26ZLqZ8)
