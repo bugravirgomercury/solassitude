@@ -4,6 +4,8 @@ This file holds the trivial parts of development process of this project, you ca
 
 PS: The commit messages and documents may have chaotic language, I'm not doing purple prose here, I just do my coding that way, think of live stream coding (but not in real-time and everything is in written language). This is a personal project after all, no need for 'politically correctness'. I may even cuss! If you're triggered by this, I'm not the right person for you.
 
+The *italic* entries are sources of inspiration for the game's ambience/mechanics/soundtrack, unrelated with the code.
+
 # Apr 4 2022
 - Trying to abstract the GL things, OpenGL can be major pain in the ass due to its state machine nature!
 - I may need to revise the GL abstractions design, redo the *gl_abstract* thing from scratch.
@@ -21,4 +23,17 @@ PS: The commit messages and documents may have chaotic language, I'm not doing p
 - http://www.opengl-tutorial.org/beginners-tutorials/tutorial-2-the-first-triangle/
 - Have enough API abstracted to be able to apply OpenGL tutorials with it.
 - https://store.steampowered.com/app/774811/YUMENIKKI_DREAM_DIARY/
-- *rafael anton irisarri midnight colours*
+- [*rafael anton irisarri - midnight colours*](https://www.youtube.com/playlist?list=OLAK5uy_lY2grlc2ULuazvTITlDqotZUszTSeC2Fg)
+
+# Apr 6 2022
+- Found out it's better to abstract OpenGL in a more procedural style, as the library is a mere state machine. Not very conducive to object oriented design.
+- Look up [Fahrenheit](https://en.wikipedia.org/wiki/Fahrenheit_(graphics_API)), [OpenGL++](https://en.wikipedia.org/wiki/OpenGL%2B%2B) for an idea how to structure the OpenGL abstraction. (They both failed to finish, though.)
+- [*youryoungbody - january*](https://www.youtube.com/watch?v=Sc2D26ZLqZ8)
+- [*sleeping at last - saturn*](https://www.youtube.com/watch?v=dzNvk80XY9s), *(the clip visuals)*
+- [*stromae - la solassitude*](https://www.youtube.com/watch?v=YoTZVJgGG94), *(that's the song this game is named after)*
+- This game's lore going to be hella depressive one by the way.
+- [*virgo - water planet*](https://store.steampowered.com/app/580520/Water_Planet/), *(an album and a lone explorer game in a distant fictional planet)*
+- Will port the game to Vulkan when I get a new computer that supports it. No Vulkan for me with my low-end ultrabook from 2012 :(
+- Won't deal with DirectX and Metal though. Khronos is just enough to do the job.
+- Maybe port the game to Android and iOS as well? *(have to get my wallet Apple'd though for the latter)*
+- Maybe add VR to this thing? *(gonna hurt very bad w/o a game engine, God help me)*
