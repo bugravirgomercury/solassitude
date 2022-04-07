@@ -7,7 +7,6 @@ add_executable(solassitude
 			   src/glfw_window.cpp
 			   src/gl_abstract.cpp
 			   src/gl_vertex_array.cpp
-			   src/gl_buffer.cpp
 			   src/glew_abstract.cpp
 			   src/glfw_abstract.cpp
 			   src/gl_reference.cpp)
