@@ -38,7 +38,9 @@ int main(int argc, char const *argv[])
     
     window.input_mode(solassitude::glfw::input_modes::sticky_keys, true);
     
-    solassitude::gl::vertex_arrays vaos{ 1 };
+    solassitude::gl::vertex_array vao;
+    vao.activate();
+    
     
     do {
         // clear screen
