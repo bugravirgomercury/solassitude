@@ -12,6 +12,8 @@ namespace solassitude {
 		class vertex_array : 
 			public reference<vertex_array> {
 				
+			friend class reference<vertex_array>; // to access on_xx methods.
+				
 		public:
 			explicit vertex_array(unsigned int id) : reference{ id } { }
 			explicit vertex_array(); // generate one with a new id.
