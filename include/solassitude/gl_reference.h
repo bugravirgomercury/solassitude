@@ -12,11 +12,11 @@ namespace solassitude {
 			~reference() { static_cast<derived_t &>(*this).on_destruct(); }
 			
 			explicit reference(const reference<derived_t> &copy) : object{ copy } { 
-				static_cast<derived_t &>(*this).on_copy(static_cast<const derived_t &>(std::forward(copy)), false);
+				static_cast<derived_t &>(*this).on_copy(static_cast<const derived_t &>(copy), false);
 			}
 			
 			explicit reference(reference<derived_t> &&move) : object{ std::move(move) } {
-				static_cast<derived_t &>(*this).on_move(static_cast<derived_t &&>(std::forward(move)), false);
+				static_cast<derived_t &>(*this).on_move(static_cast<derived_t &&>(std::move(move)), false);
 			}
 			
 			reference<derived_t> &operator =(const reference<derived_t> &copy) {
