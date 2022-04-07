@@ -2,6 +2,7 @@
 
 #include <stdexcept> // std::runtime_error
 #include <utility> // std::move
+#include <string> // std::string
 
 namespace solassitude {
     template <class derived_t>
@@ -20,10 +21,15 @@ namespace solassitude {
         constexpr error_code_t error_code(void) const noexcept {
             return m_error_code;
         }
+        
+        explicit library_error(error_code_t error_code, std::string error_description)
+            : std::runtime_error{ error_description }
+            , m_error_code{ error_code }
+        {
+        }
     
         explicit library_error(error_code_t error_code)
-            : std::runtime_error{ static_cast<derived_t &>(*this).what_for_error_code(error_code) }
-            , m_error_code{ error_code }
+            : library_error{ error_code, static_cast<derived_t &>(*this).what_for_error_code(error_code) }
         {
         }
         

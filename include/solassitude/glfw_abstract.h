@@ -35,19 +35,8 @@ namespace solassitude {
         
         class error : public library_error<error> {
         public:
-            /* 
-            * TODO: While GLFW error handling does allow acquiring error code and its description,
-            * 		 it does not have a function for acquiring description for a specific
-            *		 error code. The library_error abstraction requires a way to get error message
-            *		 for specific error code passed in the constructor, so this class is shelved
-            *		 for now. Look for issue #2071 on GLFW GitHub repository.
-            *		 (https://github.com/glfw/glfw/issues/2071)
-            */
-                
-        
-            std::string what_for_error_code(error_code_t error_code) const noexcept;
-            
-            explicit error(error_code_t error_code) : library_error{ error_code } { }
+            explicit error(error_code_t error_code, std::string error_description) : library_error{ error_code, error_description } { }
+            explicit error(error_code_t error_code) = delete;
             explicit error();
             ~error() { }
         };
