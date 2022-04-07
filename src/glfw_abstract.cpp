@@ -7,22 +7,31 @@
 #include <string> // std::string
 #include <cassert> // assert
 
-solassitude::glfw::error::error() : solassitude::glfw::error{ ::glfwGetError(NULL) } { }
+static inline std::string _solassitude_glfw_init_error(int &err_code) noexcept {
+    const char *glfw_description{ nullptr };
+    int glfw_code{ ::glfwGetError(&glfw_description) };
+    err_code = glfw_code;
+    if (GLFW_NO_ERROR == glfw_code) {
+        return std::string{ "" };
+    } else {
+        return std::string{ glfw_description };
+    }
+}
+
+// m_error_code will be remodified by the mutable reference, the function is needed to properly
+// handle default initialization of error class.
+
+solassitude::glfw::error::error() : solassitude::glfw::error{ 0, _solassitude_glfw_init_error(m_error_code) } { }
+
 
 void solassitude::glfw::glfw::initialize(void) {
     if (!glfwInit()) {
-        throw solassitude::glfw::error{ glfwGetError(NULL) };
+        throw solassitude::glfw::error{}; // Gets the error code and description by default c'tor.
     }
 }
 
 void solassitude::glfw::glfw::terminate(void) {
     glfwTerminate();
-}
-
-std::string solassitude::glfw::error::what_for_error_code(solassitude::glfw::error::error_code_t error_code) const noexcept {
-    char description[256];
-    glfwGetErrorDescription(error_code, description, sizeof(description));
-    return std::string{ description };
 }
 
 void solassitude::glfw::glfw::msaa_samples(unsigned int samples) {
