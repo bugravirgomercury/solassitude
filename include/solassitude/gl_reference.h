@@ -3,6 +3,8 @@
 #include "gl_abstract.h"
 #include <utility>
 
+#define UNUSED_PARAMETER(x) (void)(x)
+
 namespace solassitude {
 	namespace gl {
 		template <class derived_t> class reference : public object {
@@ -40,8 +42,8 @@ namespace solassitude {
 		protected:
 		
 			void on_destruct(void) { }
-			void on_copy(const derived_t &copy, bool is_assign) { }
-			void on_move(derived_t &&move, bool is_assign) { }
+			void on_copy(const derived_t &copy, bool is_assign) { UNUSED_PARAMETER(copy); UNUSED_PARAMETER(is_assign); }
+			void on_move(derived_t &&move, bool is_assign) { UNUSED_PARAMETER(move); UNUSED_PARAMETER(is_assign); }
 			void on_activate(void) { }
 		};
 	}

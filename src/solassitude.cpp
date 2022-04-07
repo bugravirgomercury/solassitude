@@ -20,7 +20,7 @@ void log(const std::string_view& message,
                 << message << '\n';
 }
 
-int main(int argc, char const *argv[])
+int main(int, char const *[])
 {
     solassitude::glew::experimental(true); // needed for core profile
     solassitude::glfw::glfw glfw; // Initialize GLFW

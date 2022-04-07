@@ -38,6 +38,9 @@ void solassitude::gl::vertex_array::on_activate(void) {
 }
 
 void solassitude::gl::vertex_array::on_copy(const solassitude::gl::vertex_array &copy, bool is_assign) {
+	UNUSED_PARAMETER(copy);
+	UNUSED_PARAMETER(is_assign);
+	
 	// TODO: How to clone a VAO? Help wanted.
 	throw std::logic_error{ "VAO cloning not yet implemented" };
 }
@@ -50,5 +53,7 @@ void solassitude::gl::vertex_array::on_move(solassitude::gl::vertex_array &&move
 		this->on_destruct(); // Move assignment, destroy current one
 		
 	// ID move is handled by the base class, and we have no more fields to copy.
+	UNUSED_PARAMETER(move);
+	UNUSED_PARAMETER(is_assign);
 }
 
