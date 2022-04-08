@@ -43,3 +43,4 @@ The *italic* entries are sources of inspiration for the game's ambience/mechanic
 - Define a global `bind` method for binding any GL object, returning a binding object that handles the binding.
 - Remove binding logic from `gl::reference` (`on_activate` method) to specific binding objects.
 - We won't allow implicit binding by implicit construction of binding objects from GL objects. We'll have to explicitly indicate whatever we're binding.
+- The GL abstaction idea turned out to be complicated, will strip all GL abstractions for now.

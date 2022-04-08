@@ -5,11 +5,8 @@ project(solassitude)
 add_executable(solassitude 
 			   src/solassitude.cpp
 			   src/glfw_window.cpp
-			   src/gl_abstract.cpp
-			   src/gl_vertex_array.cpp
 			   src/glew_abstract.cpp
-			   src/glfw_abstract.cpp
-			   src/gl_reference.cpp)
+			   src/glfw_abstract.cpp)
 
 set_target_properties(
 	solassitude PROPERTIES
