@@ -37,3 +37,9 @@ The *italic* entries are sources of inspiration for the game's ambience/mechanic
 - Won't deal with DirectX and Metal though. Khronos is just enough to do the job.
 - Maybe port the game to Android and iOS as well? *(have to get my wallet Apple'd though for the latter)*
 - Maybe add VR to this thing? *(gonna hurt very bad w/o a game engine, God help me)*
+
+# Apr 8 2022
+- Abstract `glBind*` calls as binding objects. Implement GL objects' API on binding objects instead of the real objects, forcing proper binding/unbinding. Design it as a scope guard.
+- Define a global `bind` method for binding any GL object, returning a binding object that handles the binding.
+- Remove binding logic from `gl::reference` (`on_activate` method) to specific binding objects.
+- We won't allow implicit binding by implicit construction of binding objects from GL objects. We'll have to explicitly indicate whatever we're binding.
