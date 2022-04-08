@@ -6,7 +6,6 @@
 #include <solassitude/glfw_abstract.h>
 #include <solassitude/glfw_window.h>
 #include <solassitude/gl_abstract.h>
-#include <solassitude/gl_vertex_array.h>
 
 void log(const std::string_view& message,
          const std::experimental::source_location &location = 

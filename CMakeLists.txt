@@ -3,10 +3,11 @@ cmake_minimum_required(VERSION 3.0)
 project(solassitude)
 
 add_executable(solassitude 
-			   src/solassitude.cpp
 			   src/glfw_window.cpp
 			   src/glew_abstract.cpp
-			   src/glfw_abstract.cpp)
+			   src/glfw_abstract.cpp
+			   src/gl_abstract.cpp
+			   src/solassitude.cpp)
 
 set_target_properties(
 	solassitude PROPERTIES
